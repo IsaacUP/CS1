@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '1#0vh$$*l#j127343ku)ztwsa$6(#hs4xv5j)dl11+agei=(y#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['localhost','35.174.104.40']
 
@@ -31,13 +31,31 @@ ALLOWED_HOSTS = ['localhost','35.174.104.40']
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
+'django.contrib.admin',
+'django.contrib.auth',
+'django.contrib.contenttypes',
+'django.contrib.sessions',
+'django.contrib.messages',
+'django.contrib.staticfiles',
+'rest_framework',
+'rest_framework.authtoken'
 ]
+
+SITE_ID = 1
+
+REST_FRAMEWORK = {
+'DEFAULT_PERMISSION_CLASSES':('rest_framework.permissions.IsAuthenticated',),
+'DEFAULT_AUTHENTICATION_CLASSES':('rest_framework.authentication.TokenAuthentication',),
+'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+'PAGE_SIZE': 100
+}
+
+CORS_ALLOW_METHODS = (
+'DELETE',
+'GET',
+'POST',
+'PUT',
+)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -107,7 +125,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-mx'
 
 TIME_ZONE = 'UTC'
 

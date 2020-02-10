@@ -1,0 +1,13 @@
+# Node modules
+node_modules
+
+
+# Adonis directory for storing rmp files
+tmp
+
+# Enviroment variables, never commit this file
+.env
+
+# The development sqlite file
+database/*.sqlite
+

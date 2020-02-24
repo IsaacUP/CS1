@@ -42,7 +42,7 @@ INSTALLED_APPS = [
 'rest_framework.authtoken',
 'rest_framework_swagger',
 'Login',
-'Profile'
+'Profile',
 ]
 
 SITE_ID = 1
@@ -52,7 +52,7 @@ REST_FRAMEWORK = {
 'DEFAULT_AUTHENTICATION_CLASSES':('rest_framework.authentication.TokenAuthentication',),
 'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
 'PAGE_SIZE': 100,
-#'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'
+'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'
 }
 
 CORS_ALLOW_METHODS = (
@@ -145,3 +145,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = 'static'

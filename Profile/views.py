@@ -87,7 +87,7 @@ class EstadoCivilList(APIView):
     def post(self, request, format=None):
         serializer = EstadoCivilSerializers(data = request.data)
         if serializer.is_valid():
-            serializer.save()
+            serializer.save()   
             datas = serializer.data
             return Response(datas)
         return Response(serializer.errors, status = status.HTTP_400_BAD_REQUEST)
